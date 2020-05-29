@@ -24,8 +24,7 @@ changelog:
     - '^docs:'
     - '^test:'
 brews:
-  -
-    name: acert
+  - name: acert
     github:
       owner: greymatter-io
       name: homebrew-greymatter
