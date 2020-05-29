@@ -32,5 +32,5 @@ brews:
     description: Command-line utility for creating and managing X.509 identities
     homepage: https://github.com/greymatter-io/acert
     folder: Formula
-    test:
-      system: "#{bin}/acert version"
+    test: |
+      system "#{bin}/acert version"
