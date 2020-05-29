@@ -3,6 +3,7 @@
 [![CircleCI](https://circleci.com/gh/greymatter-io/acert.svg?style=svg)](https://circleci.com/gh/greymatter-io/acert)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e6075ec40b30e413437c/maintainability)](https://codeclimate.com/github/greymatter-io/acert/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e6075ec40b30e413437c/test_coverage)](https://codeclimate.com/github/greymatter-io/acert/test_coverage)
+[![Release](https://github.com/greymatter-io/acert/workflows/Create%20a%20release/badge.svg)](https://github.com/greymatter-io/acert/actions)
 
 A command line utility for managing X.509 identities.
 
