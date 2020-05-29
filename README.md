@@ -18,11 +18,11 @@ Acert uses [Cobra](https://github.com/spf13/cobra) so all commands support a hel
 
 To print the current version and commit for the acert binary run the following command:
 
-    acert version 
+    acert version
 
 ### Authorities
 
-Authorities represent the X.509 identities of certificate authorities and are required to in order to use Acert to issue X.509 leaf identities.  
+Authorities represent the X.509 identities of certificate authorities and are required to in order to use Acert to issue X.509 leaf identities.
 
 #### Creating
 
@@ -41,6 +41,10 @@ For a full list of the options available when creating a certificate authority r
 To delete a certificate authority run the following command where FINGERPRINT is the SHA 256 fingerprint of the authority:
 
     acert authorities delete FINGERPRINT
+
+If you just want to delete everything, run:
+
+    rm -rf ~/.acert/*
 
 #### Listing
 
