@@ -1,6 +1,9 @@
-name: Create release
+name: Create a release
 
-on: push
+on: 
+  push:
+    tags:
+      - v*
 
 jobs:
   goreleaser:
