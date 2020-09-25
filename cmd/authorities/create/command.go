@@ -33,6 +33,7 @@ func Command() *cobra.Command {
 	command := &cobra.Command{
 		Use:   "create",
 		Short: "Create an authority",
+		Args: cobra.ExactArgs(0),
 		RunE: func(command *cobra.Command, args []string) error {
 
 			viper.BindPFlag("commonName", command.Flags().Lookup("commonName"))

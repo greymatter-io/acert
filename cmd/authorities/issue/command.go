@@ -31,7 +31,7 @@ import (
 func Command() *cobra.Command {
 
 	command := &cobra.Command{
-		Use:   "issue",
+		Use:   "issue FINGERPRINT",
 		Short: "Issue a certificate",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(command *cobra.Command, args []string) error {
