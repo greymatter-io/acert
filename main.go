@@ -15,7 +15,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/greymatter-io/acert/cmd"
@@ -24,7 +23,6 @@ import (
 func main() {
 	err := cmd.Acert().Execute()
 	if err != nil {
-		fmt.Println(err)
 		os.Exit(1)
 	}
 }
