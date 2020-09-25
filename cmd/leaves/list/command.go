@@ -42,7 +42,7 @@ func Command() *cobra.Command {
 
 			for _, identity := range identities {
 
-				authority := certificates.Fingerprint(identity.Authorities[1])
+				authority := certificates.Fingerprint(identity.Authorities[0])
 				expiration := certificates.Expiration(identity.Certificate)
 				fingerprint := certificates.Fingerprint(identity.Certificate)
 				name := certificates.CommonName(identity.Certificate)
