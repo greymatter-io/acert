@@ -33,10 +33,11 @@ func Command() *cobra.Command {
 	command := &cobra.Command{
 		Use:   "create",
 		Short: "Create an authority",
-		Args: cobra.ExactArgs(0),
+		Args:  cobra.ExactArgs(0),
 		RunE: func(command *cobra.Command, args []string) error {
 
 			viper.BindPFlag("commonName", command.Flags().Lookup("commonName"))
+			viper.BindPFlag("dnsNames", command.Flags().Lookup("dnsNames"))
 			viper.BindPFlag("country", command.Flags().Lookup("country"))
 			viper.BindPFlag("expires", command.Flags().Lookup("expires"))
 			viper.BindPFlag("state", command.Flags().Lookup("state"))
@@ -61,6 +62,7 @@ func Command() *cobra.Command {
 				NotAfter:              time.Now().Add(options.Expires),
 				NotBefore:             time.Now(),
 				SerialNumber:          big.NewInt(time.Now().Unix()),
+				DNSNames:              options.DNSNames,
 				Subject: pkix.Name{
 					CommonName:         fmt.Sprintf("%s (Root)", options.CommonName),
 					Country:            []string{options.Country},
@@ -108,6 +110,7 @@ func Command() *cobra.Command {
 	}
 
 	command.Flags().StringP("commonName", "n", "Acert", "common name for the authority")
+	command.Flags().StringSliceP("dnsNames", "d", []string{"Acert"}, "list of SANs for the authority")
 	command.Flags().StringP("country", "c", "US", "two letter country code for the authority")
 	command.Flags().DurationP("expires", "e", (time.Hour * 24 * 3650), "expiration time for the authority")
 	command.Flags().StringP("state", "s", "Virginia", "state for the authority")

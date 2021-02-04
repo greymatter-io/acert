@@ -37,6 +37,7 @@ func Command() *cobra.Command {
 		RunE: func(command *cobra.Command, args []string) error {
 
 			viper.BindPFlag("commonName", command.Flags().Lookup("commonName"))
+			viper.BindPFlag("dnsNames", command.Flags().Lookup("dnsNames"))
 			viper.BindPFlag("country", command.Flags().Lookup("country"))
 			viper.BindPFlag("expires", command.Flags().Lookup("expires"))
 			viper.BindPFlag("state", command.Flags().Lookup("state"))
@@ -111,6 +112,7 @@ func Command() *cobra.Command {
 	}
 
 	command.Flags().StringP("commonName", "n", "Acert", "common name for the authority")
+	command.Flags().StringSliceP("dnsNames", "d", []string{"Acert"}, "list of SANs for the authority")
 	command.Flags().StringP("country", "c", "US", "two letter country code for the authority")
 	command.Flags().DurationP("expires", "e", (time.Hour * 24 * 3650), "expiration time for the authority")
 	command.Flags().StringP("state", "s", "Virginia", "state for the authority")
