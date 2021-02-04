@@ -27,6 +27,9 @@ type Options struct {
 	// Country defines the country for an authority.
 	Country string `mapstructure:"country"`
 
+	// DNSNames defines the subject alternative names for a certificate.
+	DNSNames []string `mapstructure:"dnsNames"`
+
 	// Expires defines the duration for which an authority is valid.
 	Expires time.Duration `mapstructure:"expires"`
 
